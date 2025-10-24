@@ -9,9 +9,11 @@ class QuizRepository {
 
   Quiz readQuiz() {
     try {
+      // final file = File('${Directory.current.path}/$filePath');
       final file = File(filePath);
       if (!file.existsSync()) {
         throw Exception("File not found at: $filePath");
+        // print('Current directory: ${Directory.current.path}');
       }
       final content = file.readAsStringSync();
       final data = jsonDecode(content);
@@ -41,7 +43,7 @@ class QuizRepository {
 
       final Map<String, dynamic> data = {
         'questions': questions.map((q) => q.toJson()).toList(),
-        'players': questions,
+        'players': playersJson,
       };
 
       final encoder = JsonEncoder.withIndent(' ');
