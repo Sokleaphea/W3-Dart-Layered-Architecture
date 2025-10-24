@@ -4,7 +4,7 @@ import 'ui/quiz_console.dart';
 import 'data/quiz_file_provider.dart';
 
 void main() {
-  const quizFilePath = 'lib/data/quiz.json';
+  const quizFilePath = 'data/quiz.json';
   final repo = QuizRepository(quizFilePath);
 
   final Map<String, int> scoreboard = {};
